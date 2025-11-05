@@ -32,8 +32,7 @@ class DIViewModel @Inject constructor(
 ): ViewModel() {
 
     val rotation = MutableStateFlow(45f)
-//    val text = injected.dependencyString
-    val text = "Hello from VM"
+    val text = injected.dependencyString
 
     init {
         viewModelScope.launch {
