@@ -42,10 +42,6 @@ abstract class MozartWallpaperService  : WallpaperService() {
     inner class ComposeEngine(
         private val context: Context
     ): Engine() {
-        val viewModelStoreOwner = object : ViewModelStoreOwner {
-            override val viewModelStore: ViewModelStore
-                get() = ViewModelStore()
-        }
 
         private var virtualDisplay: VirtualDisplay? = null
         private var presentation: Presentation? = null
@@ -72,12 +68,10 @@ abstract class MozartWallpaperService  : WallpaperService() {
                 this.setViewTreeSavedStateRegistryOwner(customLifecycleOwner)
 
                 setContent {
-                    CompositionLocalProvider(LocalViewModelStoreOwner provides viewModelStoreOwner) {
-                        wallpaperContents(offsets.value.copy(
-                            screenWidth = width,
-                            screenHeight = height
-                        ))
-                    }
+                    wallpaperContents(offsets.value.copy(
+                        screenWidth = width,
+                        screenHeight = height
+                    ))
                 }
             }
 

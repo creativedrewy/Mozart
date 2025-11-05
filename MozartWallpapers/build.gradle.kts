@@ -38,7 +38,7 @@ dependencies {
 }
 
 mavenPublishing {
-    coordinates("io.github.creativedrewy", "mozartwallpapers", "0.1.1")
+    coordinates("io.github.creativedrewy", "mozartwallpapers", "0.1.2")
 
     pom {
         name.set("MozartWallpapers")
