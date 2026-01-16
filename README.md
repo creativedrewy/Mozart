@@ -21,6 +21,9 @@ dependencies {
 For version catalog:
 
 ```toml
+[versions]
+mozart = "<version>"
+
 [libraries]
 mozart = { module = "io.github.creativedrewy:mozartwallpapers", version = "mozart" }
 ```
