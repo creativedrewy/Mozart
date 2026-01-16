@@ -37,7 +37,7 @@ class MyComposeWallpaper: MozartWallpaperService() {
             Box(
                 modifier = Modifier
             ) {
-                // Your wallpaper content goes here
+                // Your Jetpack composables go here!
             }
         }
 }
@@ -73,4 +73,22 @@ And register the wallpaper in your manifest:
             android:resource="@xml/wallpaper" >
         </meta-data>
     </service>
+```
+
+You can apply your wallpaper by firing the relevant Intent:
+
+```kotlin
+val myPaperIntent = Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
+myPaperIntent.putExtra(
+    WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+    ComponentName(this, MyComposeWallpaper::class.java)
+)
+```
+
+## License
+
+```
+Copyright 2026 Andrew Watson
+
+Licensed under the Apache License, Version 2.0
 ```
