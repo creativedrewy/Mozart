@@ -57,22 +57,22 @@ And register the wallpaper in your manifest:
 
 ```xml
  <service
-        android:name="com.myapp.package.MyComposeWallpaper"
-        android:enabled="true"
-        android:label="My Wallpaper"
-        android:exported="true"
-        android:permission="android.permission.BIND_WALLPAPER" >
+    android:name="com.myapp.package.MyComposeWallpaper"
+    android:enabled="true"
+    android:label="My Wallpaper"
+    android:exported="true"
+    android:permission="android.permission.BIND_WALLPAPER" >
 
-        <intent-filter>
-            <action android:name="android.service.wallpaper.WallpaperService" >
-            </action>
-        </intent-filter>
+    <intent-filter>
+        <action android:name="android.service.wallpaper.WallpaperService" >
+        </action>
+    </intent-filter>
 
-        <meta-data
-            android:name="android.service.wallpaper"
-            android:resource="@xml/wallpaper" >
-        </meta-data>
-    </service>
+    <meta-data
+        android:name="android.service.wallpaper"
+        android:resource="@xml/wallpaper" >
+    </meta-data>
+</service>
 ```
 
 You can apply your wallpaper by firing the relevant Intent:
